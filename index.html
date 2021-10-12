@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>웹페이지 만들기 연습해보자!</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <p id=bckgms><audio src="background_music.mp3" controls loop="true"></audio></p>
+        <h1><span class="star">★</span> 준호의 웹페이지 <span class="star">★</span></h1>
+    </head>
+    <body>
+        <div id="grid">
+            <div id="indexlist">
+                <ul>
+                    <li><span class="now">홈 화면</span></li>
+                    <li><a href="site.html">각종 사이트</a></li>
+                    <li><a href="unit_cost.html">단위 원가 계산기</a></li>
+                    <li><a href="youtube.html">유튜브 관련 사이트</a></li>
+                    <li><a href="etc.html">기타</a></li>
+                </ul>
+            </div>
+            <div id="notli">
+                <p>
+                    준호의 웹페이지입니다! HTML, CSS, JS(JQuery)를 연습해보기 위해 만들어진 사이트입니다.
+                    <input type=button value="로또번호 추천받기" onclick="
+                    var lotto = [];
+                    for ( var i = 1; i < 46; i++ ) {
+                        lotto.push(i);
+                    }
+                    lotto = lotto.sort(function(a, b) { return Math.random() - Math.random(); });
+                    lotto = lotto.slice(0,6);
+                    alert('준호가 추천해주는 로또 번호는 '+ lotto.sort(function(a,b) {return a-b;})+ '입니다!');
+                    ">
+                </p>
+                <p>
+                    <img src="html.jpg" width=80%>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+h1 {
+    text-align: center;
+    border-bottom: 1px gray solid;
+    padding: 50px;
+    margin: 0px;
+}
+#bckgms {
+    text-align:right;
+}
+.star {
+    color: yellow;
+}
+.now {
+    background-color: greenyellow;
+    display:block;
+}
+.game_buttons {
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+}
+@media(min-width:800px) {
+    #grid {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+    }
+    #indexlist {
+        border-right: 1px gray solid;
+    }
+}
+ul {
+    list-style-type: none;
+    padding:0px;
+    text-indent:30px;
+    font-weight: bold;
+    line-height: 50px;
+}
+ol {
+    font-size: 22px;
+}
+p {
+    margin-left : 20px;
+    line-height: 20px;
+    font-weight:normal;
+    font-size:18px;
+}
+a {
+    text-decoration: none;
+    color:black;
+}
+.cal {
+    width: 100px;
+}
+#quotient {
+    color: red;
+    font-weight: bold;
+}
+#calculated {
+    text-indent: 20px;
+    display: block;
+    font-weight: bold;
+}
+.game_buttons {
+    font-size: 30px;
+    font-weight: bold;
+    color: blue;
+    background-color: darkgrey;
+}

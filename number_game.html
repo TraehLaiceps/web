@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>웹페이지 만들기 연습해보자!</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+            var numbers_game = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
+            numbers_game = numbers_game.sort(function(a,b) { return Math.random() - Math.random(); });
+            var now_num = 1;
+            var last = 0;
+        </script>
+            <p>
+                <input type="button" value="홈 화면으로 돌아가기" onclick="location.href='index.html'">
+            </p>
+            <p>
+                <input type="button" value="시작하기" id="start_btn">
+                <input type="button" value="리셋하기" id="reset_btn">
+            </p>
+            <p>
+                <input type="button" value="" class="game_buttons" id="btn_1">
+                <input type="button" value="" class="game_buttons" id="btn_2">
+                <input type="button" value="" class="game_buttons" id="btn_3">
+                <input type="button" value="" class="game_buttons" id="btn_4">
+                <input type="button" value="" class="game_buttons" id="btn_5"> </br>
+                <input type="button" value="" class="game_buttons" id="btn_6">
+                <input type="button" value="" class="game_buttons" id="btn_7">
+                <input type="button" value="" class="game_buttons" id="btn_8">
+                <input type="button" value="" class="game_buttons" id="btn_9">
+                <input type="button" value="" class="game_buttons" id="btn_10"> </br>
+                <input type="button" value="" class="game_buttons" id="btn_11">
+                <input type="button" value="" class="game_buttons" id="btn_12">
+                <input type="button" value="" class="game_buttons" id="btn_13">
+                <input type="button" value="" class="game_buttons" id="btn_14">
+                <input type="button" value="" class="game_buttons" id="btn_15"> </br>
+                <input type="button" value="" class="game_buttons" id="btn_16">
+                <input type="button" value="" class="game_buttons" id="btn_17">
+                <input type="button" value="" class="game_buttons" id="btn_18">
+                <input type="button" value="" class="game_buttons" id="btn_19">
+                <input type="button" value="" class="game_buttons" id="btn_20"> </br>
+                <input type="button" value="" class="game_buttons" id="btn_21">
+                <input type="button" value="" class="game_buttons" id="btn_22">
+                <input type="button" value="" class="game_buttons" id="btn_23">
+                <input type="button" value="" class="game_buttons" id="btn_24">
+                <input type="button" value="" class="game_buttons" id="btn_25">
+                <script>
+                    $("#start_btn").click( function(event) {
+                        $("#start_btn").attr('disabled', true);
+                        for (var i = 0; i < 25; i++ ) {
+                        $("#btn_"+(i+1)).val(numbers_game[i]);
+                        }
+                        last = event.timeStamp;
+                } );
+                    $("#reset_btn").click( function() {
+                        numbers_game = numbers_game.sort(function(a,b) { return Math.random() - Math.random(); });
+                        $("#start_btn").attr('disabled', false);
+                        $(".game_buttons").attr('disabled', false);
+                        $(".game_buttons").val("");
+                        now_num = 1;
+                    });
+                    $(".game_buttons").click( function(event) {
+                        if( $(this).val() == now_num && now_num < 25 ) {
+                            now_num += 1;
+                            $(this).attr('disabled', true);
+                        }
+                        else if ( $(this).val() == now_num && now_num === 25 ) {
+                            var diff = event.timeStamp - last;
+                            diff = diff/1000;
+                            alert('축하합니다! 걸린 시간은 ' + diff + '초입니다!');
+                            $(this).attr('disabled', true);
+                        }
+                    })
+                </script>
+            </p>
+    </body>
+</html>
