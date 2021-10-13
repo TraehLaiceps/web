@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>웹페이지 만들기 연습해보자!</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+            <p>
+                <input type="button" value="홈 화면으로 돌아가기" onclick="location.href='index.html'">
+            </p>
+            <p>
+                <input type="button" value="시작하기" id="start_btn">
+                <input type="button" value="리셋하기" id="reset_btn">
+            </p>
+        <!--
+            <p class="arrow_btns_location"> 
+                <span id="need_space"></span><input type="button" value="↑" class="arrow_btns" id="up_btn"></br></br>
+                <input type="button" value="←" class="arrow_btns" id="left_btn">
+                <input type="button" value="↓" class="arrow_btns" id="down_btn">
+                <input type="button" value="→" class="arrow_btns" id="right_btn">
+            </p>
+        -->
+            <p id="toggle_start"></p>
+            <p id="question"></p>
+            <p id="answer"></p>
+            <script src="memory_game.js"></script>
+    </body>
+</html>
